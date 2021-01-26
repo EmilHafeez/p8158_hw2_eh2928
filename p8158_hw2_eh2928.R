@@ -11,6 +11,11 @@ features = dat[,c(2, 4, 5, 6, 15)]
 summary(features)
 
 ### Here we use polychoric correlation and do parallel analysis of eigenvalues
-geneticparallel <- fa.parallel(features, cor = "poly", fa = "pa")
+#plot.new()
+geneticparallel <- fa.parallel(features, cor = "poly", fa = "pc")
 geneticparallel$pc.values
 geneticparallel$pc.sim
+
+#Cronbach's alpha
+geneticalpha<-alpha(usevars)
+geneticalpha
